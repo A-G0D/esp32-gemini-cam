@@ -1,0 +1,10 @@
+{
+ "n": 100,
+ "resize_width": 1024,
+ "frame_bytes": 440093,
+ "median_ms": 31.11,
+ "mean_ms": 30.83,
+ "p90_ms": 34.88,
+ "max_ms": 41.22,
+ "machine": "Darwin arm64, Python 3.12.14"
+}

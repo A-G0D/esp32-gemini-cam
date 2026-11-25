@@ -1,0 +1,4 @@
+# gemini_relay.py uses only the Python stdlib (urllib, json, base64).
+# Pillow is OPTIONAL - only needed if you set "resize_width" to shrink frames
+# before sending to Gemini (saves tokens/latency). Without it, full frames are sent.
+pillow>=10.0.0

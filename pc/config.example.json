@@ -1,0 +1,34 @@
+{
+  "provider": "gemini",
+
+  "gemini_api_key": "PUT-YOUR-AI-STUDIO-KEY-HERE",
+  "model": "gemini-2.5-flash-lite",
+
+  "_groq_option": "set provider to 'openai' to use Groq (free, 1000 req/day, fast). Get key at console.groq.com",
+  "openai_base_url": "https://api.groq.com/openai/v1",
+  "openai_model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "openai_api_key": "gsk_PUT-YOUR-GROQ-KEY-HERE",
+
+  "s3_capture_url": "http://s3cam.local/capture",
+  "c3_msg_url": "http://c3hud.local/msg",
+
+  "interval_sec": 3,
+  "resize_width": 1024,
+  "temperature": 0.2,
+  "gemini_timeout": 30,
+
+  "prompt": "You are a vision HUD. Look at the image and identify the single most prominent object. Respond ONLY as JSON with keys: target (short object name, <=10 chars), acquired (true if a clear subject is present else false), conf (integer 0-100 confidence), note (<=10 char extra detail).",
+
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "target":   { "type": "string" },
+      "acquired": { "type": "boolean" },
+      "conf":     { "type": "integer" },
+      "note":     { "type": "string" }
+    },
+    "required": ["target", "acquired", "conf", "note"]
+  },
+
+  "display_template": "{target}\nACQ {acquired}\nconf {conf}\n{note}"
+}
